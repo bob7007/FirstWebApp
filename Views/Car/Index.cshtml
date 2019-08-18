@@ -1,0 +1,64 @@
+﻿@model List<DAL.Moldels.Car>
+
+<br />
+<br />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>nombre</th>
+            <th>color</th>
+            <th>branch</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var car in Model)
+        {
+
+        <tr>
+            <td>
+                @car.Brand
+            </td>
+            <td>
+                @car.Color
+            </td>
+            <td>
+                @car.Branch.Name
+
+            </td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", "Car", new { @carId = car.Id }, new { @class = "btn btn-primary" })
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", "Car", new { @carId = car.Id }, new { @class = "btn btn-primary" })
+            </td>
+        </tr>
+
+        }
+
+    </tbody>
+
+</table>
+
+<br />
+
+
+@Html.ActionLink("Create New Car","Create", "Car", new {@class = "btn btn-primary" })

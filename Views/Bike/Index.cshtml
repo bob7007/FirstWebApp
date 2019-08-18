@@ -1,0 +1,39 @@
+﻿@model List<DAL.Moldels.Bike>
+
+<br />
+<br />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>nombre</th>
+            <th>color</th>
+            <th>branch</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var bike in Model)
+        {
+
+            <tr>
+                <td>
+                    @bike.Brand
+                </td>
+                <td>
+                    @bike.Color
+                </td>
+                <td>
+                    @bike.Branch.Name
+                </td>
+            </tr>
+
+        }
+
+    </tbody>
+
+</table>
+
+<br />
+
+
+@Html.ActionLink("Create New Bike", "Create", "Bike", new { @class = "btn btn-primary" })
